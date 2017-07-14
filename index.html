@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>CWIN Dashboard (BETA)</title>
+        <meta name="description" content="CWIN DATA">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="normalize.css">
+        <link rel="stylesheet" href="app.css">
+        <link rel="stylesheet" href="node_modules/angular-hotkeys/build/hotkeys.min.css">
+        <!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"> -->
+        <link rel="stylesheet" href="bootstrap.min.css">
+    </head>
+    <body ng-app="myApp">
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div class="container" ng-controller="MainCtrl">
+
+            <div class="header">
+                <h3 class="text-muted">CWIN Dashboard</h3>
+            </div>
+
+            <div class="panel panel-default">
+                <div class="panel-heading">Instructions</div>
+                <div class="panel-body">
+                    <p>This is a dashboard to visualize the data collected through the Kobo Toolbox forms that CWIN collects. This should provide the public and enforcement bodies insight into trafficking and human exploitation. <strong>Press '?' to view the keyboard shortcuts.</strong>
+
+                    <p>The following are the analyses provided</p>
+                    <ol>
+                        <li>General Information</li>
+                        <li>Parental Information</li>
+                        <li>Problem Scanning</li>
+                        <li>Helpline Actions</li>
+                        <li>Follow Up</li>
+                    </ol>
+                </div>
+            </div>
+
+        </div> <!-- /container -->
+
+
+
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="jquery-1.10.2.min.js"><\/script>')</script>
+
+        <!-- <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script> -->
+        <script src="bootstrap.min.js"></script>
+        <script src="modernizr-2.6.2.min.js"></script>
+        <script src="angular.min.js"></script>
+        <script src="node_modules/angular-hotkeys/build/hotkeys.min.js"></script>
+        <script src="app.js"></script>
+        
+    </body>
+</html>

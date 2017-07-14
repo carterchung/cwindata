@@ -1,0 +1,44 @@
+/*global angular*/
+<!DOCTYPE html>
+
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<body>
+
+<div ng-app="myApp" ng-controller="myCtrl"> 
+
+<p>Today's welcome message is:</p>
+
+<h1>{{myWelcome}}</h1>
+
+</div>
+
+<p>The $http service requests a page on the server, and the response is set as the value of the "myWelcome" variable.</p>
+
+<script>
+var app = angular.module('myApp', []);
+   
+   console.log('calling api');
+app.controller('myCtrl', function($scope, $http) {
+ 
+    // the AJAX call will be here
+    $http.get("https://kc.humanitarianresponse.info/api/v1/data/106953",{
+      headers: {'Authorization': "Token 58f8919da4d5e49dd40691298c594ecc7a16570b"}
+    }).success(function(data, status, headers, config) {
+      console.log('data',data);
+    }).error(function(data, status, headers, config) {
+      console.log('error');
+    });
+    
+  });
+    
+    
+//  $http.get("welcome.htm")
+ // .then(function(response) {
+ //     $scope.myWelcome = response.data;
+ // });
+
+</script>
+
+</body>
+</html>
