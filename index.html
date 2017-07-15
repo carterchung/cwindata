@@ -46,22 +46,56 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Helpline Services</div>
                 <div class="panel-body">
-                    <canvas id="bar" class="chart chart-bar" chart-data="dataTemp" chart-labels="labelsTemp" chart-series="seriesTemp" chart-options="optionsTemp"> </canvas>
+                    <canvas id="bar" class="chart chart-bar" chart-data="data1" chart-labels="labels1" chart-series="series1" chart-options="options1" chart-dataset-override="datasetOverride1"> </canvas>
                 </div>
             </div>
 
-            <label>Search: <input ng-model="searchText"></label>
             <div class="panel panel-default">
-                <div class="panel-heading">Helpline Services</div>
+                <div class="panel-heading">3 Major Helpline Services</div>
                 <div class="panel-body">
+                    <canvas id="line" class="chart chart-line" chart-data="data2" chart-labels="labels2" chart-series="series2" chart-options="options2" chart-dataset-override="datasetOverride2"> </canvas>
+                </div>
+            </div>
+
+            <div class="panel panel-info">
+                <div class="panel-heading">Counseling</div>
+                <div class="panel-body">
+                    <canvas id="line2" class="chart chart-bar" chart-data="ageData" chart-labels="ageLabels" chart-series="ageSeries" chart-options="ageOptions"> </canvas>
+                    <br>
+                    <br>
+                    <div class="row well">
+                        <div class="col-xs-6">
+                            <canvas id="doughtnut" class="chart chart-doughnut" chart-data="counselingData" chart-labels="counselingLabels" chart-options="counselingOptions"> </canvas>
+                        </div>
+                        <div class="col-xs-6">
+                            <div class="panel panel-warning">
+                                <div class="panel-heading">Look at this data!</div>
+                                <div class="panel-body">
+                                    Commentary
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                      <span class="input-group-addon" id="basic-addon1">Search</span>
+                      <input type="text" ng-model="searchText" class="form-control" placeholder="...">
+                    </div><br>
+
                     <table id="#generalinformation" class="table table-hover table-condensed table-striped">
                         <tr>
-                            <th>Type</th>
-                            <th>Helpline</th>
+                            <th>Registration $</th>
+                            <th>Name</th>
+                            <th>Age</th>
+                            <th>Gender</th>
+                            <th>Main Issue</th>
                         </tr>
-                        <tr ng-repeat="row in model">
-                            <td>{{row["group_zu9nn95/Registered_From"]}}</td>
-                            <td>{{row["group_ai24b73/_35_Helpline_Services_Provided"]}}</td>
+                        <tr ng-repeat="row in cModel | filter:searchText">
+                            <td>{{row["group_zu9nn95/_2_Registration_Number"]}}</td>
+                            <td>{{row["group_zu9nn95/_5_full_name_of_child"]}}</td>
+                            <td>{{row["group_zu9nn95/_7_age"]}}</td>
+                            <td>{{mapping[row["group_zu9nn95/_8_gender"]]}}</td>
+                            <td>{{mapping[row["group_sy7hf84/_24_Main_problem_of_the_Child"]]}}</td>
                         </tr>
                     </table>
                 </div>
@@ -80,6 +114,7 @@
         <script src="bootstrap.min.js"></script>
         <script src="modernizr-2.6.2.min.js"></script>
         <script src="node_modules/chart.js/dist/chart.js"></script>
+        <script src="data_model.js"></script>
         <script src="node_modules/angular/angular.min.js"></script>
         <script src="node_modules/angular-chart.js/dist/angular-chart.min.js"></script>
         <script src="node_modules/angular-hotkeys/build/hotkeys.min.js"></script>
