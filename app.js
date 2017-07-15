@@ -1,3 +1,9 @@
+/*
+(15 July 2017) This is the beginning of an application to visualize CWIN's Kobo data.
+
+JS Framework is Angular
+CSS Framework is Bootstrap
+*/
 var myApp = angular.module('myApp', ['cfp.hotkeys','chart.js']);
 
 myApp.directive('inputSquare', function(){
@@ -8,6 +14,7 @@ myApp.directive('inputSquare', function(){
   };
 });
 
+// The main controller of the application
 myApp.controller('MainCtrl',['$scope','hotkeys','$interval','$http',function($scope, hotkeys, $interval, $http){
   console.log('start');
   s = $scope; //  just for debugging (simontiu)
@@ -59,7 +66,7 @@ myApp.controller('MainCtrl',['$scope','hotkeys','$interval','$http',function($sc
       ];
   };
 
-  // This function runs at the end of the file
+  // This function runs at the end of the file as an initiation step
   $scope.init = function() {
     console.log('Init');
     console.log('Create Helpline Service Chart')
@@ -70,6 +77,7 @@ myApp.controller('MainCtrl',['$scope','hotkeys','$interval','$http',function($sc
     drawCounselingTotalDoughnutGraph();
   };
 
+  // Draws Counseling bar graph by Age Range
   var drawCounselingAgeRangeGraph = function() {
     $scope.cModel = filterDataByHelpline("6_counseling");
     var ageRangeCountBoy = getAgeRangeCount("6_counseling",$scope.cModel,"group_zu9nn95/_8_gender","1__boy");
