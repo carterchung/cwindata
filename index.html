@@ -43,18 +43,45 @@
                 </div>
             </div>
 
+            <div class="panel panel-default">
+                <div class="panel-heading">Helpline Services</div>
+                <div class="panel-body">
+                    <canvas id="bar" class="chart chart-bar" chart-data="dataTemp" chart-labels="labelsTemp" chart-series="seriesTemp" chart-options="optionsTemp"> </canvas>
+                </div>
+            </div>
+
+            <label>Search: <input ng-model="searchText"></label>
+            <div class="panel panel-default">
+                <div class="panel-heading">Helpline Services</div>
+                <div class="panel-body">
+                    <table id="#generalinformation" class="table table-hover table-condensed table-striped">
+                        <tr>
+                            <th>Type</th>
+                            <th>Helpline</th>
+                        </tr>
+                        <tr ng-repeat="row in model">
+                            <td>{{row["group_zu9nn95/Registered_From"]}}</td>
+                            <td>{{row["group_ai24b73/_35_Helpline_Services_Provided"]}}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+
+
         </div> <!-- /container -->
 
 
-
-
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="jquery-1.10.2.min.js"><\/script>')</script>
 
         <!-- <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script> -->
+        <script src="node_modules/underscore/underscore-min.js"></script>
         <script src="bootstrap.min.js"></script>
         <script src="modernizr-2.6.2.min.js"></script>
-        <script src="angular.min.js"></script>
+        <script src="node_modules/chart.js/dist/chart.js"></script>
+        <script src="node_modules/angular/angular.min.js"></script>
+        <script src="node_modules/angular-chart.js/dist/angular-chart.min.js"></script>
         <script src="node_modules/angular-hotkeys/build/hotkeys.min.js"></script>
         <script src="app.js"></script>
         
