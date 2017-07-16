@@ -66,16 +66,33 @@ myApp.controller('MainCtrl',['$scope','hotkeys','$interval','$http',function($sc
       ];
   };
 
+  $scope.passDetails = function(data){
+    $scope.selectedPerson = data;
+  }
+
   // This function runs at the end of the file as an initiation step
   $scope.init = function() {
     console.log('Init');
-    console.log('Create Helpline Service Chart')
+    // get data
+    console.log('http start');
+    $http.get('data.json').then(
+        function successCallback(response){
+            $scope.model = response.data;
+            drawAllCharts(); // upon success draw everything
+        }, 
+        function errorCallback(response) {
+            alert('Error: something went wrong :(');
+           //error code    
+    });
+  };
+
+  // Wrapper function for all the charts
+  var drawAllCharts = function() {
     helplineServiceChart();
     majorHelplineServiceChart();
-
     drawCounselingAgeRangeGraph();
     drawCounselingTotalDoughnutGraph();
-  };
+  }
 
   // Draws Counseling bar graph by Age Range
   var drawCounselingAgeRangeGraph = function() {
@@ -391,6 +408,6 @@ myApp.controller('MainCtrl',['$scope','hotkeys','$interval','$http',function($sc
     "33.Others" : "Others"
   };
   $scope.searchText = "";
-  $scope.model = mapping;
+  // $scope.model = mapping;
   $scope.init();
 }]);
