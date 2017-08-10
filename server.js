@@ -21,7 +21,7 @@ app.get('/', function (req, res) {
 
 	request(options, callback);
   // res.send('Hello World!')
-  res.sendFile(path.join(__dirname + '/../index.html'));
+  res.sendFile(path.join(__dirname + '/index.html'));
 });
 
 app.use(express.static('public'));
