@@ -1,3 +1,11 @@
+import 'angular';
+import _ from 'underscore';
+import sampleResponse from './data.json';
+import './bootstrap.min.js';
+// import './modernizr-2.6.2.min.js';
+import 'chart.js';
+import 'angular-chart.js';
+import 'angular-hotkeys';
 /*
 (15 July 2017) This is the beginning of an application to visualize CWIN's Kobo data.
 
@@ -17,7 +25,7 @@ myApp.directive('inputSquare', function(){
 // The main controller of the application
 myApp.controller('MainCtrl',['$scope','hotkeys','$interval','$http',function($scope, hotkeys, $interval, $http){
   console.log('start');
-  s = $scope; //  just for debugging (simontiu)
+  // s = $scope; //  just for debugging (simontiu)
 
   // This function draws the helpline service chart
   var helplineServiceChart = function() {
@@ -75,15 +83,16 @@ myApp.controller('MainCtrl',['$scope','hotkeys','$interval','$http',function($sc
     console.log('Init');
     // get data
     console.log('http start');
-    $http.get('data.json').then(
-        function successCallback(response){
-            $scope.model = response.data;
+
+    // $http.get('data.json').then(
+    //     function successCallback(response){
+            $scope.model = sampleResponse;
             drawAllCharts(); // upon success draw everything
-        }, 
-        function errorCallback(response) {
-            alert('Error: something went wrong :(');
-           //error code    
-    });
+    //     }, 
+    //     function errorCallback(response) {
+    //         alert('Error: something went wrong :(');
+    //        //error code    
+    // });
   };
 
   // Wrapper function for all the charts

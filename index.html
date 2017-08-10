@@ -10,13 +10,11 @@
         <meta name="description" content="CWIN DATA">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="stylesheet" href="normalize.css">
-        <link rel="stylesheet" href="app.css">
+        <link rel="stylesheet" href="src/normalize.css">
+        <link rel="stylesheet" href="src/app.css">
         <link rel="stylesheet" href="node_modules/angular-hotkeys/build/hotkeys.min.css">
-        <link href="bootstrap-side-navbar.css" rel="stylesheet" />
-
-        <!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"> -->
-        <link rel="stylesheet" href="bootstrap.min.css">
+        <link rel="stylesheet" href="src/bootstrap-side-navbar.css"/>
+        <link rel="stylesheet" href="src/bootstrap.min.css">
     </head>
     <body ng-app="myApp">
         <!--[if lt IE 7]>
@@ -128,7 +126,7 @@
                           </div>
                             <div class="row">
                                 <br>
-                              <div class="col-xs-3 col-xs-offset-1"><img src="profilepic.jpg" alt="profilepicexample"></div>
+                              <div class="col-xs-3 col-xs-offset-1"><img src="src/profilepic.jpg" alt="profilepicexample"></div>
                               <div class="col-xs-6 col-xs-offset-1">
                               <div class="panel panel-default">
                                 <ul class="list-group">
@@ -173,25 +171,10 @@
         </div>
                   
 
-
-
-
         </div> <!-- /container -->
 
-
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="jquery-1.10.2.min.js"><\/script>')</script>
-
-        <!-- <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script> -->
-        <script src="node_modules/underscore/underscore-min.js"></script>
-        <script src="bootstrap.min.js"></script>
-        <script src="modernizr-2.6.2.min.js"></script>
-        <script src="node_modules/chart.js/dist/chart.js"></script>
-        <script src="data_model.js"></script>
-        <script src="node_modules/angular/angular.min.js"></script>
-        <script src="node_modules/angular-chart.js/dist/angular-chart.min.js"></script>
-        <script src="node_modules/angular-hotkeys/build/hotkeys.min.js"></script>
-        <script src="app.js"></script>
+<!--    <script src="modernizr-2.6.2.min.js"></script>-->
+        <script src="./dist/bundle.js"></script>
         
     </body>
 </html>
