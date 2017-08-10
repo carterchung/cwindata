@@ -12,11 +12,12 @@
     "angular": "^1.6.5",
     "angular-chart.js": "^1.1.1",
     "angular-hotkeys": "^1.7.0",
+    "bootstrap": "^3.3.7",
     "chart.js": "^2.6.0",
-    "moment": "^2.18.1",
-    "webpack": "^3.4.1",
     "jquery": "^3.2.1",
-    "underscore": "^1.8.3"
+    "moment": "^2.18.1",
+    "underscore": "^1.8.3",
+    "webpack": "^3.4.1"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

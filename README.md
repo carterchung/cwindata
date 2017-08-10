@@ -14,3 +14,5 @@ Start the server
 ```
 npm start
 ```
+
+Go to localhost:3000 to see the app!

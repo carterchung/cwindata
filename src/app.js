@@ -1,7 +1,7 @@
 import 'angular';
 import _ from 'underscore';
 import sampleResponse from './data.json';
-import './bootstrap.min.js';
+import 'bootstrap';
 // import './modernizr-2.6.2.min.js';
 import 'chart.js';
 import 'angular-chart.js';
