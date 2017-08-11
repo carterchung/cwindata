@@ -4,28 +4,17 @@ const app = express();
 
 require('dotenv').config();
 
-var request = require('request');
- 
-var options = {
-  url: 'https://kc.kobotoolbox.org/api/v1/data/54471',
-  headers: {
-    'Authorization': 'Token ' + process.env.KOBO_TOKEN
-  }
-};
-
-function callback(error, response, body) {
-  console.log(body);
-}
-
 app.get('/', function (req, res) {
-
-	request(options, callback);
-  // res.send('Hello World!')
   res.sendFile(path.join(__dirname + '/index.html'));
 });
 
+var Controller = require('./api/Controller');
+app.use('/api', Controller);
+
 app.use(express.static('public'));
 
-app.listen(3000, function () {
+const port = process.env.PORT || 3000;
+
+app.listen(port, function () {
   console.log('CWIN Dashboard listening on port 3000!')
 });

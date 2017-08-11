@@ -84,15 +84,16 @@ myApp.controller('MainCtrl',['$scope','hotkeys','$interval','$http',function($sc
     // get data
     console.log('http start');
 
-    // $http.get('data.json').then(
-    //     function successCallback(response){
-            $scope.model = sampleResponse;
+    $http.get('/api/v1/data.json').then(
+        function successCallback(response){
+            // $scope.model = sampleResponse;
+            $scope.model = response.data;
             drawAllCharts(); // upon success draw everything
-    //     }, 
-    //     function errorCallback(response) {
-    //         alert('Error: something went wrong :(');
-    //        //error code    
-    // });
+        }, 
+        function errorCallback(response) {
+            alert('Error: something went wrong :(');
+           //error code    
+    });
   };
 
   // Wrapper function for all the charts
